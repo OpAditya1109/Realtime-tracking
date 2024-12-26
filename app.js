@@ -6,6 +6,9 @@ const server = http.createServer(app);
 const io = socketio(server);
 const path = require("path");
 
+app.set("views", path.join(__dirname, "views"));  // Ensure Express knows where the views directory is
+
+
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
